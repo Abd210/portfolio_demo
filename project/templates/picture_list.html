@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Picture List</title>
+</head>
+<body>
+    <h1>Uploaded Pictures</h1>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <h2>{{ picture.title }}</h2>
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" style="max-width: 400px;">
+                <p>Uploaded at: {{ project.uploaded_at }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
