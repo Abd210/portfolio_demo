@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ project.title }} | Project Detail</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'home' %}#projects">Projects</a></li>
+        <li><a href="{% url 'home' %}#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Project Detail -->
+  <section class="project-detail">
+    <h1>{{ project.title }}</h1>
+    <img src="{{ project.image.url }}" alt="{{ project.title }}">
+    <p><strong>Description:</strong> {{ project.description }}</p>
+    <p><strong>Technology:</strong> {{ project.technology }}</p>
+    <p><strong>Uploaded At:</strong> {{ project.uploaded_at }}</p>
+    <a href="{{ project.url }}" target="_blank">View Project</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
+</body>
+</html>
